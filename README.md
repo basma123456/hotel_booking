@@ -15,7 +15,7 @@ Clone the repository and install the dependencies:
 
 ```bash
 git clone https://github.com/basma123456/hotel_booking.git
-cd hotes_booking
+cd hotel_booking
 composer install
 ```
 
@@ -42,10 +42,10 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Run the migrations and seed the database:
+Run the migrations:
 
 ```bash
-php artisan migrate --seed
+php artisan migrate
 ```
 
 Start the application:
@@ -260,6 +260,22 @@ Requests exceeding the limit return:
 429 Too Many Requests
 ```
 
+## Seed Data
+
+The project includes a hotel booking seeder.
+
+Run:
+
+```bash
+php artisan db:seed
+```
+
+The seeder creates:
+
+* Afaq Plus Hotel
+* Standard Room
+* Inventory for several dates
+
 ## Testing
 
 The tests use a separate MySQL database to avoid affecting the development database.
@@ -353,22 +369,6 @@ php tests/Concurrency/idempotency_concurrency.php
 ```
 
 These tests send multiple requests at the same time and verify that database locking and idempotency prevent duplicate or overbooked reservations.
-
-## Seed Data
-
-The project includes a hotel booking seeder.
-
-Run:
-
-```bash
-php artisan db:seed
-```
-
-The seeder creates:
-
-* Afaq Plus Hotel
-* Standard Room
-* Inventory for several dates
 
 ## Project Structure
 
