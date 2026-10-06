@@ -1,0 +1,29 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Hotel;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends Factory<Hotel>
+ */
+class HotelFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+
+   protected $model = Hotel::class;
+
+    public function definition(): array
+    {
+        return [
+            'name' => fake()->company() . ' Hotel',
+        ];
+    }
+    
+
+ }
